@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Définition de l'encodage des caractères -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Permet l'adaptation du site sur mobile -->
+    <title>Weather-App</title>
+    <!-- Lien vers la feuille de style principale -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Lien vers la bibliothèque d'icônes Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8b+z4xj5c5e5e5e5e5e5e5e5e5e5e5e5e5e" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Carte principale contenant l'application météo -->
+    <div class="card">
+        <!-- Section de recherche de ville -->
+        <div class="search">
+            <!-- Champ de saisie pour le nom de la ville -->
+            <input type="text" id="search" spellcheck="false" placeholder="Enter city name">
+            <!-- Bouton de recherche avec une icône -->
+            <button><img src="images/search.png"></button>
+        </div>
+        <!-- Section affichant les informations météo -->
+        <div class="weather">
+            <!-- Icône météo principale -->
+            <img src="images/rain.png" class="weather-icon">
+            <!-- Température affichée -->
+            <h1 class="temp">22°c</h1>
+            <!-- Nom de la ville affichée -->
+            <h2 class="city">New York</h2>
+            <!-- Détails supplémentaires : humidité et vent -->
+            <div class="details">
+                <div class="col">
+                    <!-- Icône d'humidité -->
+                    <img src="images/humidity.png">
+                    <div>
+                        <!-- Valeur de l'humidité -->
+                        <p class="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- Icône de vent -->
+                    <img src="images/wind.png">
+                    <div>
+                        <!-- Valeur de la vitesse du vent -->
+                        <p class="wind">15 km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inclusion du script JavaScript principal -->
+    <script src=" script.js"></script>
+</body>
+
+</html>
