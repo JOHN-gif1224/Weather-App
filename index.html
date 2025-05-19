@@ -7,49 +7,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Permet l'adaptation du site sur mobile -->
     <title>Weather-App</title>
-    <!-- Lien vers la feuille de style principale -->
+    <!-- Lien vers Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lien vers la feuille de style principale (optionnel si tu veux garder des styles personnalisés) -->
     <link rel="stylesheet" href="style.css">
     <!-- Lien vers la bibliothèque d'icônes Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8b+z4xj5c5e5e5e5e5e5e5e5e5e5e5e5e5e" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="bg-gray-900 min-h-screen flex items-center justify-center">
     <!-- Carte principale contenant l'application météo -->
-    <div class="card">
+    <div class="card bg-gradient-to-br from-teal-400 to-indigo-700 text-white rounded-2xl w-[90%] max-w-[470px] mx-auto mt-10 p-8 text-center shadow-lg">
         <!-- Section de recherche de ville -->
-        <div class="search">
+        <div class="search w-full flex items-center justify-between mb-4 gap-2">
             <!-- Champ de saisie pour le nom de la ville -->
-            <input type="text" id="search" spellcheck="false" placeholder="Enter city name">
+            <input type="text" id="search" spellcheck="false" placeholder="Enter city name"
+                class="flex-1 bg-teal-50 text-gray-700 px-6 py-3 rounded-full text-lg mr-4 focus:outline-none" />
             <!-- Bouton de recherche avec une icône -->
-            <button><img src="images/search.png"></button>
+            <button class="bg-teal-50 rounded-full w-14 h-14 flex items-center justify-center hover:bg-teal-100 transition">
+                <img src="images/search.png" class="w-5" />
+            </button>
+        </div>
+        <div class="error text-left mt-2 ml-2 text-sm text-red-400 hidden">
+            <p>Invalid city name</p>
         </div>
         <!-- Section affichant les informations météo -->
-        <div class="weather">
+        <div class="weather hidden flex flex-col items-center">
             <!-- Icône météo principale -->
-            <img src="images/rain.png" class="weather-icon">
+            <img src="images/rain.png" class="weather-icon w-40 mt-8" />
             <!-- Température affichée -->
-            <h1 class="temp">22°c</h1>
+            <h1 class="temp text-6xl font-semibold mt-4">22°c</h1>
             <!-- Nom de la ville affichée -->
-            <h2 class="city">New York</h2>
+            <h2 class="city text-3xl font-medium mt-2">New York</h2>
             <!-- Détails supplémentaires : humidité et vent -->
-            <div class="details">
-                <div class="col">
+            <div class="details flex items-center justify-between px-5 mt-12 w-full max-w-xs gap-4">
+                <div class="col flex items-center text-left">
                     <!-- Icône d'humidité -->
-                    <img src="images/humidity.png">
+                    <img src="images/humidity.png" class="w-10 mr-4" />
                     <div>
                         <!-- Valeur de l'humidité -->
-                        <p class="humidity">50%</p>
-                        <p>Humidity</p>
+                        <p class="humidity text-2xl font-bold -mt-1">50%</p>
+                        <p class="text-sm">Humidity</p>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col flex items-center text-left">
                     <!-- Icône de vent -->
-                    <img src="images/wind.png">
+                    <img src="images/wind.png" class="w-10 mr-4" />
                     <div>
                         <!-- Valeur de la vitesse du vent -->
-                        <p class="wind">15 km/h</p>
-                        <p>Wind Speed</p>
+                        <p class="wind text-2xl font-bold -mt-1">15 km/h</p>
+                        <p class="text-sm">Wind Speed</p>
                     </div>
                 </div>
             </div>
@@ -57,7 +63,7 @@
     </div>
 
     <!-- Inclusion du script JavaScript principal -->
-    <script src=" script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
